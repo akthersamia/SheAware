@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "sheaware-backend-v1",
+		"name": "SheAware API (Refactored)",
+		"description": "API collection for SheAware backend v1.1. User Auth removed. Standard JSON response format.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"platform\": \"ios\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"device"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Symptoms",
+			"item": [
+				{
+					"name": "Log Symptom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "{{device_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"{{device_id}}\",\n    \"symptoms\": [\n        {\n            \"name\": \"abnormal_bleeding\",\n            \"severity\": 3,\n            \"duration_value\": 5,\n            \"duration_unit\": \"days\"\n        }\n    ],\n    \"pain_intensity\": 4,\n    \"mood\": \"Sad\",\n    \"notes\": \"Notes\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/symptoms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"symptoms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Device-Id",
+								"value": "{{device_id}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/symptoms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"symptoms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Education",
+			"item": [
+				{
+					"name": "List Articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/content/articles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"content",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Articles (Symptoms)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/content/articles?category=Symptoms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"content",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Symptoms"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Schedule Reminder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"device_id\": \"{{device_id}}\",\n    \"type\": \"reminder\",\n    \"title\": \"Log check\",\n    \"message\": \"Time to check in\",\n    \"cron_spec\": \"0 9 * * *\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/notifications/schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Support",
+			"item": [
+				{
+					"name": "List Resources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/resources/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"resources",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/v1",
+			"type": "string"
+		},
+		{
+			"key": "device_id",
+			"value": "ENTER_DEVICE_ID_HERE",
+			"type": "string"
+		}
+	]
+}

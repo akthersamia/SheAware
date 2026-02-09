@@ -1,0 +1,16 @@
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'auth_data_response.freezed.dart';
+part 'auth_data_response.g.dart';
+
+@freezed
+abstract class AuthDataResponse with _$AuthDataResponse {
+  const factory AuthDataResponse({
+    @JsonKey(name: 'device_id') required String deviceId,
+  }) = _AuthDataResponse;
+
+
+  factory AuthDataResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthDataResponseFromJson(json);
+}
