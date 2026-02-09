@@ -64,7 +64,7 @@ The backend must be running before starting the Flutter application.
 ## 🔹 Step 1 – Clone Repository
 
 ```bash
-git clone https://github.com/your-username/sheaware.git
+git clone https://github.com/akthersamia/SheAware.git
 cd sheaware
 Step 2 – Backend Setup (Django API)
 
