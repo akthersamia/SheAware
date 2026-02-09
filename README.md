@@ -61,106 +61,63 @@ The backend must be running before starting the Flutter application.
 
 ---
 
-## 🔹 Step 1 – Clone Repository
+## 🔹 Steps  – Clone Repository
 
 ```bash
 git clone https://github.com/akthersamia/SheAware.git
-cd sheaware
-Step 2 – Backend Setup (Django API)
-
+cd SheAware
+🔹 Step 2 – Backend Setup (Django API)
 Navigate to backend folder:
 
-cd she_aware
-
+cd backend_django
 Create Virtual Environment
 python -m venv venv
-
-
-Activate environment:
+Activate:
 
 Mac/Linux:
 
 source venv/bin/activate
-
-
 Windows:
 
 venv\Scripts\activate
-
 Install Dependencies
 pip install -r requirements.txt
-
-Configure Environment Variables
-
-Create a .env file in the backend root directory:
-
-SECRET_KEY=your_secret_key
-DEBUG=True
-ALLOWED_HOSTS=127.0.0.1,localhost
-GEMINI_API_KEY=your_gemini_api_key
-
-
-⚠️ GEMINI_API_KEY is required for AI risk scoring.
-
 Apply Database Migrations
 python manage.py migrate
-
-Create Superuser (Optional)
-python manage.py createsuperuser
-
-Run Backend Server
+**Run Backend Server
 python manage.py runserver
-
-
-Backend URL:
+Backend will run at:
 
 http://127.0.0.1:8000/v1/
-
-
-Admin Panel:
-
-http://127.0.0.1:8000/admin/
-
 🔹 Step 3 – Frontend Setup (Flutter App)
+Go back to project root:
 
-Navigate to Flutter project folder:
-
-cd sheaware_flutter
-
+cd ..#If the folder is downloaded from zip cd command to select the folder from the downloaded location.
+cd frontend_flutter
 Install Dependencies
 flutter pub get
-
+step 4:
+To run a Flutter App in vs code from the terminal
+flutter run
+if you want to see available devices
+flutter devices
+And if you need to start an Android emulator manually:
+flutter emulators
+flutter emulators --launch <emulator_id>
+Then run again:
+flutter run
+if the code does not run follow the steps below and try the step 4 again at the end
 Generate Required Files
 flutter pub run build_runner build --delete-conflicting-outputs
-
-🔹 Step 4 – Configure API Base URL
-
+🔹 Step 5 – Configure API Base URL
 Open:
 
-lib/di/network_module.dart
-
-
-Set base URL:
+frontend_flutter/lib/di/network_module.dart
+Set:
 
 For Android Emulator:
 
 const baseUrl = 'http://10.0.2.2:8000/v1/';
-
-
 For iOS Simulator:
 
 const baseUrl = 'http://localhost:8000/v1/';
-
-🔹 Step 5 – Start Emulator
-
-Open Android Studio and run an Android Emulator
-
-OR use:
-
-flutter emulators --launch emulator_name
-
-🔹 Step 6 – Run Application
-flutter run
-
-
-The application will automatically register the device and connect to the backend API.
