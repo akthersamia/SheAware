@@ -1,20 +1,20 @@
-# SheAware 🌸
+# SheAware
 
 **SheAware** is a premium, privacy-focused mobile health application designed to raise awareness about uterine tumours and cancers among women in the United Kingdom, with a specific focus on South Asian communities. It bridges the gap between symptom onset and medical consultation through education, anonymous tracking, and AI-powered risk awareness.
 
 ---
 
-## 🌟 Main Features
+## Main Features
 
-- **📚 Education Hub**: Access verified health information sourced from peer-reviewed literature, NHS guidance, and World Health Organization (WHO) reports.
-- **📝 Symptom Tracker**: Privately log and monitor uterine health indicators, including symptom severity, duration, pain intensity, and mood patterns over time.
-- **🤖 AI Risk Awareness Scoring**: A non-diagnostic scoring mechanism powered by a deterministic heuristic algorithm and **Google Gemini AI**, providing actionable recommendations.
-- **🆘 Support Resources**: A curated directory of direct contacts for NHS helplines, cancer charities (like Cancer Research UK), and emergency services.
-- **🔒 Privacy-First Design**: Completely anonymous device-based identity model. No personally identifiable information (PII) like names or emails is ever collected, ensuring full compliance with UK GDPR.
+- **Education Hub**: Access verified health information sourced from peer-reviewed literature, NHS guidance, and World Health Organization (WHO) reports.
+- **Symptom Tracker**: Privately log and monitor uterine health indicators, including symptom severity, duration, pain intensity, and mood patterns over time.
+- **AI Risk Awareness Scoring**: A non-diagnostic scoring mechanism powered by a deterministic heuristic algorithm and **Google Gemini AI**, providing actionable recommendations.
+- **Support Resources**: A curated directory of direct contacts for NHS helplines, cancer charities (like Cancer Research UK), and emergency services.
+- **Privacy-First Design**: Completely anonymous device-based identity model. No personally identifiable information (PII) like names or emails is ever collected, ensuring full compliance with UK GDPR.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 - **Framework**: [Flutter](https://flutter.dev/) (Dart)
@@ -30,7 +30,7 @@
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Backend Setup (Django)
 
@@ -75,7 +75,7 @@
 
 ---
 
-## 📋 Important Information
+## Important Information
 
 - **Non-Diagnostic Tool**: SheAware is an awareness platform, not a medical diagnostic tool. It encourages users to seek professional medical advice.
 - **Anonymous Identity**: Users are identified by a unique device UUID generated on the first launch.
@@ -83,7 +83,7 @@
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
