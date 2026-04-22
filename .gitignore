@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Flutter
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+
+# Python / Django
+**/venv/
+**/__pycache__/
+*.py[cod]
+*$py.class
+db.sqlite3
+
+# IntelliJ / VS Code
+.idea/
+.vscode/
+*.iml
