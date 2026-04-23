@@ -15,7 +15,8 @@ import 'package:she_aware/injection_container.dart';
 Future<void> setUpNetworkModule() async {
   const int timeOut = 30;
 
-  const baseUrl = 'http://10.0.2.2:8000/v1/';
+  // const baseUrl = 'http://10.0.2.2:8000/v1/';
+  const baseUrl = 'http://sheaware.pythonanywhere.com/v1/';
 
   getIt.registerLazySingleton<AuthInterceptor>(
     () => AuthInterceptor(authLocalDataSource: getIt()),
